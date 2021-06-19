@@ -1,2 +1,2 @@
 # four
- Four is a tutorial to create a website using Hugo
+ Four is a tutorial to create a website using Hugo 
