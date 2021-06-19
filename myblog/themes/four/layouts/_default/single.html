@@ -1,0 +1,22 @@
+{{ define "main" }}
+<h1>{{ .Title }}</h1>
+<img
+  class="w-100"
+  src="{{ .Params.cover.image }}"
+  alt="{{ .Params.cover.alt }}"
+/>
+<p class="text-center">{{ .Params.cover.caption }}</p>
+
+<div class="row text-center">
+  <div class="col">{{ partial "metadata.html" . }}</div>
+  <div class="col">
+    <div class="btn-group">
+      {{ with .Params.tags }} {{ range . }} {{ $href := print (absURL "tags/")
+      (urlize .) }}
+      <a class="btn btn-sm btn-outline-secondary" href="{{ $href }}">{{ . }}</a>
+      {{ end }} {{ end }}
+    </div>
+  </div>
+</div>
+<br /><br />
+{{ .Content }} {{- partial "disqus.html" . -}} {{ end }}

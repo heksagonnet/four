@@ -1,0 +1,30 @@
+{{ define "main" }}
+<h1>{{ .Title }}</h1>
+<div class="row d-flex justify-content-center">
+  {{ range .Pages.ByPublishDate.Reverse }}
+  <div class="col-lg-6 my-3">
+    <div class="card shadow-sm">
+      <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="{{ .Params.cover.image }}" style="object-fit: cover;"></img>
+      <div class="card-body">
+        <h3 class="card-text">{{ .Title }}</h3>
+        <p class="card-text">{{ partial "metadata.html" . }}: {{ .Params.description }}</p>
+        <div class="d-flex justify-content-between align-items-center">
+          <div class="btn-group">
+            <a href="{{ .RelPermalink }}">
+            <button type="button" class="btn btn-sm btn-outline-secondary"> View</button></a>
+          </div>
+          <div class="btn-group">
+            {{ with .Params.tags }}
+            {{ range . }}
+            {{ $href := print (absURL "tags/") (urlize .) }}
+            <a class="btn btn-sm btn-outline-secondary" href="{{ $href }}">{{ . }}</a>
+            {{ end }}
+            {{ end }}
+          </div>   
+        </div>            
+      </div>
+    </div>
+  </div>   
+{{ end }}
+</div> 
+{{ end }}

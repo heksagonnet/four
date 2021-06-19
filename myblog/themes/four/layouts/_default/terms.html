@@ -1,0 +1,28 @@
+{{- define "main" }}
+<section class="row">
+  <div class="has-text-centered">
+    <h1 class="fs-1">{{ .Title }}</h1>
+    <p>{{ .Description }}</p>
+  </div>
+  <div class="col">
+    <div class="container">
+      <ul class="list-group">
+        {{- $type := .Type }} {{- range $key, $value := .Data.Terms.Alphabetical
+        }} {{- $name := .Name }} {{- $count := .Count }} {{- with $.Site.GetPage
+        (printf "/%s/%s" $type $name) }}
+        <li class="list-group-item btn btn-sm btn-outline-secondary">
+          <a
+            class="stretched-link text-decoration-none link-secondary fs-4"
+            href="{{ .Permalink }}"
+            >{{ .Name }}
+            <sup
+              ><strong class=""><sup>{{ $count }}</sup></strong></sup
+            ></a
+          >
+        </li>
+        {{- end }} {{- end }}
+      </ul>
+    </div>
+  </div>
+</section>
+{{- end }}{{/* end main */ -}}

@@ -1,0 +1,57 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "Four: Travel Blog"
+theme = "four"
+googleAnalytics = "UA-PROPERTY_ID/G-MEASUREMENT_ID"
+disqusShortname = "yourdiscussshortname"
+
+[params]
+  description = "Open Graph Description"
+  images = ["/img/hero1.webp"]
+  title = "Four: Travel Blog"
+  favicon = "img/world-map-pin.svg"
+
+[minify]
+  minifyOutput = true
+
+[menu]
+  [[menu.main]]
+    identifier = "blog"
+    name = "Posts"
+    url = "/posts/"
+    weight = 1
+  [[menu.main]]
+    identifier = "Contact"
+    name = "Contact"
+    url = "/#contact"
+    weight = 2
+  [[menu.main]]
+    identifier = "tags"
+    name = "Tags"
+    url = "/tags"
+    weight = 3
+  [[menu.social]]
+    name = "fab fa-twitter fa-2x link-info"
+    title = "Twitter"
+    url = "/"
+    weight = 1
+  [[menu.social]]
+    name = "fab fa-youtube fa-2x link-danger"
+    title = "Youtube"
+    url = "/"
+    weight = 2
+
+[[params.values]]
+iconclass = "fas fa-pen text-primary fa-3x py-3"
+title = "Blog"
+description = "Dedicated to sharing insightful information"
+
+[[params.values]]
+iconclass = "fas fa-bolt text-primary fa-3x py-3"
+title = "Speed"
+description = "Our priority in getting the job done fast"
+
+[[params.values]]
+iconclass = "fas fa-comment text-primary fa-3x py-3"
+title = "Chat"
+description = "Keep in touch with us to know more"

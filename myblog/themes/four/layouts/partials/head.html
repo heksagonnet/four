@@ -1,0 +1,40 @@
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Generator -->
+    {{- hugo.Generator }}
+
+    <!-- Bootstrap CSS -->
+    {{ $bootstrap := resources.Get "/css/bootstrap.min.css" }}
+    <link rel="stylesheet" href="{{ $bootstrap.Permalink }}" as="style" />
+
+    <!-- Fontawesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Custom CSS -->
+    {{ $style := resources.Get "/css/style.css" | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $style.Permalink }}" as="style" />
+
+    <!-- Title -->
+    {{ $title := print .Title " | " .Site.Title }} {{ if .IsHome }}{{ $title =
+    .Site.Title }}{{ end }} 
+    <title>{{ $title }}</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="{{- .Site.Params.favicon | default "favicon.ico" | absURL -}}" sizes="256x256">
+
+
+    {{ template "_internal/disqus.html" . }} 
+    {{ template "_internal/google_news.html" . }} 
+    {{ template "_internal/google_analytics.html" . }}
+    {{ template "_internal/google_analytics_async.html" . }}
+    {{ template "_internal/opengraph.html" . }}
+    {{ template "_internal/schema.html" . }} 
+    {{ template "_internal/twitter_cards.html" . }}
+  </head>
