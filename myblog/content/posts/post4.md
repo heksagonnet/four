@@ -1,7 +1,7 @@
 ---
 title: "My Fourth Post"
 date: 2021-06-03T23:11:13Z
-draft: true
+draft: false
 tags: ["Japan"]
 description: "This is the fourth post description"
 images: ["/img/post4.webp"]

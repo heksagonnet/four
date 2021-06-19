@@ -1,7 +1,7 @@
 ---
 title: "My First Post"
 date: 2021-04-01T23:11:13Z
-draft: true
+draft: false
 tags: ["Africa", "adventure"]
 description: "This is the first post description"
 images: ["/img/post1.webp"]

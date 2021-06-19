@@ -1,7 +1,7 @@
 ---
 title: "My Third Post"
 date: 2021-06-01T23:11:13Z
-draft: true
+draft: false
 tags: ["California"]
 description: "This is the third post description"
 images: ["/img/post3.webp"]

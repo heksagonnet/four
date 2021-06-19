@@ -1,7 +1,7 @@
 ---
 title: "My second Post"
 date: 2021-05-01T23:11:13Z
-draft: true
+draft: false
 tags: ["Europe", "romance"]
 description: "This is the second post description"
 images: ["/img/post2.webp"]
